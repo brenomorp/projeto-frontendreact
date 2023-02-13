@@ -1,9 +1,13 @@
+import { ItemWrapper } from "./ItemsStyle"
+
 function Items() {
 
     return (
-        <>
-            <p>Items</p>
-        </>
+        <ItemWrapper>
+            <p>1x</p>
+            <p>Produto</p>
+            <button>Remover</button>
+        </ItemWrapper>
     )
 }
 

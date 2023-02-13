@@ -1,12 +1,18 @@
 import Items from "../Items/Items"
+import { AsideContainer } from "../../Filters/FiltersStyle"
+import { CartItemsWrapper, TotalPrice } from "./CartStyle"
 
 function Cart() {
 
     return (
-        <>
-            <p>Cart</p>
+        <AsideContainer>
+            <h2>Carrinho</h2>
+            <CartItemsWrapper>
             <Items />
-        </>
+            <Items />
+            <TotalPrice>Valor total: R$ {0}</TotalPrice>
+            </CartItemsWrapper>
+        </AsideContainer>
     )
 }
 
