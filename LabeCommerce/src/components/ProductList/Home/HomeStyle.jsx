@@ -25,10 +25,8 @@ export const HomeMenuContainer = styled.div`
 `
 
 export const CardsContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 4em 0;
-    width: 100%;
-    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3em;
+    margin-top: 3em;
 `

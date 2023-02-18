@@ -1,14 +1,12 @@
 import ProductCard from "../ProductCard/ProductCard"
 import { HomeContainer, HomeMenuContainer, CardsContainer } from "./HomeStyle"
-import blusaNasa from '../../../assets/blusa-nasa.jpg'
 
-function Home() {
+function Home({ productList }) {
 
     return (
-        
         <HomeContainer>
             <HomeMenuContainer>
-                <p>Quantidade de produtos: {0}</p>
+                <p>Quantidade de produtos: {productList.length}</p>
                 <label htmlFor="sort">
                     Ordenação:
                     <select name="sort" id="sort">
@@ -22,18 +20,9 @@ function Home() {
                 </label>
             </HomeMenuContainer>
             <CardsContainer>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
-            <ProductCard src={blusaNasa} name="Blusa da Nasa" price={40}/>
+            {productList.map(product => (
+                <ProductCard src={product.imageUrl} name={product.name.toUpperCase()} price={product.value} />
+            ))}
             </CardsContainer>
         </HomeContainer>
     )
