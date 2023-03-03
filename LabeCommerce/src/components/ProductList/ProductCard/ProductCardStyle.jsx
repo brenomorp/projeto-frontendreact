@@ -1,36 +1,45 @@
 import styled from "styled-components";
 
 export const Card = styled.article`
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: var(--gunmetal);
+  font-size: 2rem;
+  overflow: hidden;
+  padding: 0.5em;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  div {
     display: flex;
     flex-direction: column;
-    background-color: #d5d5d3;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px 5px #222;
-    color: #252525;
-    font-size: 2rem;
-    height: 60vh;
-    overflow: hidden;
-    
-    img {
-        height: 65%;
-        border-radius: 10px 10px 0 0;
-    }
-    
-    div {
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 1.5fr 1fr 1fr;
-        align-content: space-between;
-        padding: .5em;
-    }
+    font-size: 1.5rem;
+    justify-content: space-between;
+    gap: 0.5em;
+    height: 100%;
+  }
 
-    button {
-        width: 100%;
-        height: 2em;
-        background-color: #fdd947;
-        align-self: center;
-        cursor: pointer;
-        border-radius: 10px;
-        font-size: .8em;
+  button {
+    padding: 0.5em;
+    width: 100%;
+    background-color: var(--orange);
+    align-self: flex-end;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    border: 2px solid var(--gunmetal);
+
+    :hover {
+      background-color: rgba(243, 167, 18, 0.9);
+      transition: 500ms;
     }
-`
+  }
+`;
