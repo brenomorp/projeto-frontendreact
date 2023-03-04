@@ -1,7 +1,9 @@
-import ProductCard from "../ProductCard/ProductCard"
-import { HomeContainer, HomeMenuContainer, CardsContainer } from "./HomeStyle"
+import { useState } from 'react';
+import ProductCard from '../ProductCard/ProductCard';
+import { HomeContainer, HomeMenuContainer, CardsContainer } from './HomeStyle';
 
 function Home({ productList }) {
+    const [ordination, setOrdination] = useState('Crescente');
 
     return (
         <HomeContainer>
@@ -9,23 +11,29 @@ function Home({ productList }) {
                 <p>Quantidade de produtos: {productList.length}</p>
                 <label htmlFor="sort">
                     Ordenação:
-                    <select name="sort" id="sort">
-                        <option value="Crescente">
-                            Crescente
-                        </option>
-                        <option value="Decrescente">
-                            Decrescente
-                        </option>
+                    <select
+                        name="sort"
+                        id="sort"
+                        onChange={(e) => setOrdination(e.target.value)}
+                        value={ordination}
+                    >
+                        <option value="Crescente">Crescente</option>
+                        <option value="Decrescente">Decrescente</option>
                     </select>
                 </label>
             </HomeMenuContainer>
             <CardsContainer>
-            {productList.map(product => (
-                <ProductCard src={product.imageUrl} name={product.name.toUpperCase()} price={product.value} />
-            ))}
+                {productList.map((product) => (
+                    <ProductCard
+                        src={product.imageUrl}
+                        name={product.name.toUpperCase()}
+                        price={product.value}
+                        key={product.name}
+                    />
+                ))}
             </CardsContainer>
         </HomeContainer>
-    )
+    );
 }
 
-export default Home
+export default Home;
