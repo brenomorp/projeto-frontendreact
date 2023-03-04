@@ -2,7 +2,7 @@ import Items from '../Items/Items';
 import { CartItemsWrapper, TotalPrice } from './CartStyle';
 import AsideContainer from '../../AsideContainer';
 
-function Cart() {
+function Cart({ cart, setCart, amount, setAmount }) {
     return (
         <AsideContainer>
             <h2>Carrinho</h2>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import { HomeContainer, HomeMenuContainer, CardsContainer } from './HomeStyle';
 
-function Home({ productList }) {
+function Home({ productList, cart, setCart, amount, setAmount }) {
     const [ordination, setOrdination] = useState('Crescente');
 
     return (

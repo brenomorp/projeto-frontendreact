@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
-const SearchInput = ({ className, htmlFor, text, type, name, id }) => {
+const SearchInput = ({ className, text, type, name, id, value, onChange }) => {
     return (
-        <label className={className} htmlFor={htmlFor}>
+        <label className={className} htmlFor={name}>
             {text}
-            <input type={type} name={name} id={id} />
+            <input
+                type={type}
+                name={name}
+                id={id}
+                onChange={onChange}
+                value={value}
+                min={type == 'number' ? 0 : null}
+            />
         </label>
     );
 };

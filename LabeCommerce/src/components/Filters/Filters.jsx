@@ -1,30 +1,40 @@
 import { StyledSearchInput } from './FiltersStyle';
 import AsideContainer from '../AsideContainer';
 
-function Filters() {
+function Filters({
+    minFilter,
+    setMinFilter,
+    maxFilter,
+    setMaxFilter,
+    searchFilter,
+    setSearchFilter,
+}) {
     return (
         <AsideContainer>
             <h2>Filtros</h2>
             <StyledSearchInput
-                htmlFor="filterMin"
                 text="Valor mínimo:"
                 type="number"
                 name="filterMin"
                 id="filterMin"
+                value={minFilter}
+                onChange={(e) => setMinFilter(e.target.value)}
             />
             <StyledSearchInput
-                htmlFor="filterMax"
                 text="Valor máximo:"
                 type="number"
                 name="filterMax"
                 id="filterMax"
+                value={maxFilter}
+                onChange={(e) => setMaxFilter(e.target.value)}
             />
             <StyledSearchInput
-                htmlFor="filterName"
                 text="Busca por nome:"
                 type="text"
                 name="filterName"
                 id="filterName"
+                value={searchFilter}
+                onChange={(e) => setSearchFilter(e.target.value)}
             />
         </AsideContainer>
     );
