@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ProductCard from '../ProductCard/ProductCard';
 import { HomeContainer, HomeMenuContainer, CardsContainer } from './HomeStyle';
 
-function Home({ productList, cart, setCart, amount, setAmount }) {
+function Home({ productList, cart, setCart, setAmount }) {
     const [ordination, setOrdination] = useState('Crescente');
 
     return (
@@ -27,8 +27,12 @@ function Home({ productList, cart, setCart, amount, setAmount }) {
                     <ProductCard
                         src={product.imageUrl}
                         name={product.name.toUpperCase()}
-                        price={product.value}
-                        key={product.name}
+                        price={product.price}
+                        key={product.id}
+                        cart={cart}
+                        setCart={setCart}
+                        id={product.id}
+                        setAmount={setAmount}
                     />
                 ))}
             </CardsContainer>
