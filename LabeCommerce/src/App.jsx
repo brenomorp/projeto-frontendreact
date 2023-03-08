@@ -4,7 +4,7 @@ import Home from './components/ProductList/Home/Home';
 import Cart from './components/ShoppingCart/Cart/Cart';
 import Wrapper from './components/Wrapper';
 import productList from './assets/productList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
     const [minFilter, setMinFilter] = useState('');
@@ -12,6 +12,14 @@ function App() {
     const [searchFilter, setSearchFilter] = useState('');
     const [cart, setCart] = useState([]);
     const [amount, setAmount] = useState(0);
+
+    useEffect(() => {
+        let total = 0;
+        for (let i in cart) {
+            total += cart[i].price * cart[i].quantity;
+        }
+        setAmount(total);
+    }, [cart]);
 
     return (
         <>

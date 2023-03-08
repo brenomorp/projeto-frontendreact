@@ -9,11 +9,6 @@ function Items({ name, quantity, cart, setCart, id, setAmount }) {
         } else if (cartItem.quantity === 1) {
             setCart(cart.filter((item) => item.id !== id));
         }
-        let total = 0;
-        for (let i in cart) {
-            total += cart[i].price * cart[i].quantity;
-        }
-        setAmount(total);
     };
 
     return (
