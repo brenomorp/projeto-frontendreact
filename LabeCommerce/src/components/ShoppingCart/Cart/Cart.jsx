@@ -6,9 +6,7 @@ function Cart({ cart, setCart, amount, setAmount }) {
     return (
         <AsideContainer>
             <h2>Carrinho</h2>
-            {amount != null && (
-                <TotalPrice>Valor total: R$ {amount.toFixed(2)}</TotalPrice>
-            )}
+            <TotalPrice>Valor total: R$ {amount.toFixed(2)}</TotalPrice>
             <CartItemsWrapper>
                 {cart.map((item) => (
                     <Items

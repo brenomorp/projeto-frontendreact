@@ -17,7 +17,7 @@ function Filters({
                 type="number"
                 name="filterMin"
                 id="filterMin"
-                value={minFilter}
+                value={minFilter != 0 && minFilter}
                 onChange={(e) => setMinFilter(e.target.value)}
             />
             <StyledSearchInput
@@ -25,7 +25,7 @@ function Filters({
                 type="number"
                 name="filterMax"
                 id="filterMax"
-                value={maxFilter}
+                value={maxFilter != 0 && maxFilter}
                 onChange={(e) => setMaxFilter(e.target.value)}
             />
             <StyledSearchInput
