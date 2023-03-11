@@ -26,9 +26,9 @@ export const HomeMenuContainer = styled.div`
 
 export const CardsContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
     margin-top: 2em;
-    gap: 2em;
+    gap: 1.5em;
 `;
 
 export const ProductNotFound = styled.div`

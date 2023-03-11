@@ -2,8 +2,10 @@ import styled from 'styled-components';
 
 export const ItemWrapper = styled.div`
     display: grid;
-    grid-template-columns: 10% 60% auto;
+    grid-template-columns: 0.5fr 3fr 1fr;
+    gap: 1em;
     align-items: center;
+    text-overflow: ellipsis;
 
     p {
         font-size: 1rem;

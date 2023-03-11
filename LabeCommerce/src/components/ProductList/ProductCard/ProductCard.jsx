@@ -1,4 +1,5 @@
 import { Card } from './ProductCardStyle';
+import cartIcon from '../../../assets/icons/cart.png';
 
 function ProductCard({ src, name, price, id, cart, setCart, setAmount }) {
     const addToCart = () => {
@@ -22,9 +23,14 @@ function ProductCard({ src, name, price, id, cart, setCart, setAmount }) {
         <Card>
             <img src={src} alt="Imagem do produto" />
             <div>
-                <p>{name}</p>
-                <p>Preço: R$ {price}</p>
-                <button onClick={addToCart}>Adicionar ao carrinho</button>
+                <span>{name}</span>
+                <span id="product-price">
+                    R$ {String(price).replace('.', ',')}
+                </span>
+                <button onClick={addToCart}>
+                    <img src={cartIcon} alt="cart icon" />
+                    comprar
+                </button>
             </div>
         </Card>
     );
