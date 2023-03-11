@@ -6,10 +6,21 @@ function Cart({ cart, setCart, amount, setAmount }) {
     return (
         <AsideContainer>
             <h2>Carrinho</h2>
+            <TotalPrice>Valor total: R$ {amount.toFixed(2)}</TotalPrice>
             <CartItemsWrapper>
-                <Items />
-                <Items />
-                <TotalPrice>Valor total: R$ {0}</TotalPrice>
+                {cart.map((item) => (
+                    <Items
+                        price={item.price}
+                        name={item.name}
+                        quantity={item.quantity}
+                        cart={cart}
+                        setCart={setCart}
+                        id={item.id}
+                        key={item.id}
+                        amount={amount}
+                        setAmount={setAmount}
+                    />
+                ))}
             </CartItemsWrapper>
         </AsideContainer>
     );

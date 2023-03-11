@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ItemWrapper = styled.div`
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 10% 60% auto;
     align-items: center;
 
     p {

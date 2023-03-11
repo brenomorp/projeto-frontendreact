@@ -8,5 +8,5 @@ export const CartItemsWrapper = styled.div`
 
 export const TotalPrice = styled.p`
     text-align: center;
-    margin-top: 1em;
+    margin-bottom: 1em;
 `;
