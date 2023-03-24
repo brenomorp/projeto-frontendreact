@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
 
     :root {
         --white: #FBFBFF;
-        --orange: #F3A712;
+        --orange: rgb(255, 101, 0);
         --gunmetal: #143642;
     }
 
@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'Roboto', sans-serif;
     }
-
 `;
 
 export default GlobalStyle;

@@ -1,5 +1,5 @@
 import Items from '../Items/Items';
-import { CartItemsWrapper, TotalPrice } from './CartStyle';
+import { CartItemsWrapper, CheckoutButton, TotalPrice } from './CartStyle';
 import AsideContainer from '../../AsideContainer';
 
 function Cart({ cart, setCart, amount, setAmount }) {
@@ -22,6 +22,9 @@ function Cart({ cart, setCart, amount, setAmount }) {
                     />
                 ))}
             </CartItemsWrapper>
+            {cart.length > 0 && (
+                <CheckoutButton>finalizar compra</CheckoutButton>
+            )}
         </AsideContainer>
     );
 }

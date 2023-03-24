@@ -7,7 +7,7 @@ const AsideContainer = styled.aside`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 1em;
     border-radius: 10px;
-
+    position: relative;
     h2 {
         font-size: 3rem;
         margin-bottom: 1em;
