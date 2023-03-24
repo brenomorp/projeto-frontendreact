@@ -14,11 +14,21 @@ function App() {
     const [amount, setAmount] = useState(0);
 
     useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem('cart'));
+        if (storedCart) {
+            setCart(storedCart);
+        }
+    }, []);
+
+    useEffect(() => {
         let total = 0;
         for (let i in cart) {
             total += cart[i].price * cart[i].quantity;
         }
         setAmount(total);
+        cart.length > 0
+            ? localStorage.setItem('cart', JSON.stringify(cart))
+            : localStorage.clear();
     }, [cart]);
 
     return (
