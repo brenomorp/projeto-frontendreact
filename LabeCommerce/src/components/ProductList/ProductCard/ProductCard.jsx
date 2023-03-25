@@ -1,7 +1,7 @@
 import { Card } from './ProductCardStyle';
 import cartIcon from '../../../assets/icons/cart.png';
 
-function ProductCard({ src, name, price, id, cart, setCart, setAmount }) {
+function ProductCard({ src, name, price, id, cart, setCart }) {
     const addToCart = () => {
         const cartItem = cart.find((item) => item.id == id);
 
@@ -11,12 +11,6 @@ function ProductCard({ src, name, price, id, cart, setCart, setAmount }) {
         } else {
             setCart([...cart, { name, price, id, quantity: 1 }]);
         }
-
-        let total = 0;
-        for (let i in cart) {
-            total += cart[i].price * cart[i].quantity;
-        }
-        setAmount(total);
     };
 
     return (
