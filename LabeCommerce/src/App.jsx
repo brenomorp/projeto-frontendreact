@@ -48,7 +48,6 @@ function App() {
                     cart={cart}
                     setCart={setCart}
                     amount={amount}
-                    setAmount={setAmount}
                     minFilter={minFilter}
                     maxFilter={maxFilter}
                     searchFilter={searchFilter}

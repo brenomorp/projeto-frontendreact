@@ -11,7 +11,6 @@ function Home({
     productList,
     cart,
     setCart,
-    setAmount,
     minFilter,
     maxFilter,
     searchFilter,
@@ -38,7 +37,18 @@ function Home({
             }
         })
         .filter((item) => {
-            if (item.name.toLowerCase().includes(searchFilter.toLowerCase())) {
+            if (
+                item.name
+                    .toLowerCase()
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .includes(
+                        searchFilter
+                            .toLowerCase()
+                            .normalize('NFD')
+                            .replace(/[\u0300-\u036f]/g, '')
+                    )
+            ) {
                 return item;
             }
         });
@@ -71,7 +81,6 @@ function Home({
                             cart={cart}
                             setCart={setCart}
                             id={product.id}
-                            setAmount={setAmount}
                         />
                     ))}
                 </CardsContainer>
